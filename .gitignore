@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+gitsteps.txt
+
+
+# Data
+data/processed/
+data/raw/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
