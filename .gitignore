@@ -10,6 +10,12 @@ gitsteps.txt
 data/processed/
 data/raw/
 
+# Data artifacts
+data/*.csv
+
+# Model artifacts
+models/*.pkl
+
 # VS Code
 .vscode/
 
