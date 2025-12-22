@@ -1,3 +1,12 @@
+"""
+XAI-CROP: Data Transformation Module
+
+Encodes categorical agricultural features into numerical form
+and separates input features and target labels. This module
+ensures the dataset is in a machine-learning-ready format
+while preserving mappings required for interpretability and XAI.
+"""
+
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import joblib

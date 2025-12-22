@@ -1,3 +1,13 @@
+"""
+XAI-CROP: Data Extraction and Preprocessing Module
+
+Loads the agricultural dataset, performs initial inspection,
+and cleans the data by handling missing values, removing duplicates,
+and filtering invalid records. This module prepares a reliable
+and consistent dataset for downstream transformation and modeling.
+"""
+
+
 import pandas as pd
 df=pd.read_csv("../data/cropds.csv")
 print("Initial shape:", df.shape)
@@ -19,6 +29,11 @@ print("After removing duplicates:", df.shape)
 
 #considering valid rows only
 df = df[(df['Area'] > 0) & (df['Production'] > 0)]
+# Clean categorical text columns
+df['Season'] = df['Season'].str.strip().str.lower()
+df['District_Name'] = df['District_Name'].str.strip().str.upper()
+df['Crop'] = df['Crop'].str.strip().str.title()
+
 print("After removing invalid area/production:", df.shape)
 df = df.reset_index(drop=True)
 

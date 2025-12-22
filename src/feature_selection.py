@@ -1,3 +1,14 @@
+"""
+XAI-CROP: Feature Selection Module
+
+Analyzes the relative importance of input features using a
+tree-based model to determine their contribution to crop
+recommendation. This module ranks features based on importance
+scores and finalizes the feature set used for model training
+and explainable AI analysis.
+"""
+
+
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt

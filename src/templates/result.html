@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XAI-CROP Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>XAI-CROP Recommendation</h1>
+
+    <!-- Recommendation -->
+    <div class="result-box">
+        <h2>🌱 Recommended Crop</h2>
+        <p class="crop-name">{{ crop }}</p>
+    </div>
+
+    <!-- Farmer Input Summary -->
+    <div class="result-box">
+        <h3>📌 Input Summary</h3>
+        <ul>
+            <li><strong>District:</strong> {{ district }}</li>
+            <li><strong>Season:</strong> {{ season }}</li>
+            <li><strong>Area:</strong> {{ area }}</li>
+            <li><strong>Production:</strong> {{ production }}</li>
+        </ul>
+    </div>
+
+    <!-- Natural Language Explanation -->
+    <div class="result-box">
+        <h3>🧠 Why this crop?</h3>
+        <p>{{ explanation }}</p>
+    </div>
+
+    <!-- LIME Explanation -->
+    <div class="result-box">
+        <h3>🔍 Explainable AI (LIME)</h3>
+        <p>
+            For a detailed, feature-level explanation of how each input
+            influenced this recommendation, view the LIME explanation below.
+        </p>
+        <a href="{{ url_for('static', filename='lime_explanation.html') }}" target="_blank">
+            View LIME Explanation
+        </a>
+    </div>
+
+    <a href="/" class="back-link">🔄 Try another input</a>
+
+</div>
+
+</body>
+</html>
